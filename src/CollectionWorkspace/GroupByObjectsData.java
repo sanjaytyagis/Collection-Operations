@@ -1,6 +1,27 @@
 package CollectionWorkspace;
 import java.util.*;
+import java.util.stream.Collectors;
 
+/*
+ List<Person> listOfPeople = new ArrayList<Person>();
+		
+		listOfPeople.add(new Person(5, "Sanjay" ,500.0));
+		listOfPeople.add(new Person(3, "Pakhi" ,100.0));
+		listOfPeople.add(new Person(1, "Bhavana" ,400.0));
+		listOfPeople.add(new Person(1, "Meera" ,200.0));
+		listOfPeople.add(new Person(4, "Bijender" ,300.0));
+		
+		Map<Integer, List<Person>> result; 
+		result = listOfPeople.stream().collect(Collectors.groupingBy(Person :: getId));	
+		//System.out.print(result.toString());
+		
+		Map<Integer, Long> result; 
+		result = listOfPeople.stream().collect(Collectors.groupingBy(Person :: getId,Collectors.counting()));	
+		
+		result.forEach((a,b)->{
+			System.out.print(a+"   "+b.toString()+"\n");
+		});
+ */
  class Employee {
 
     public int id;

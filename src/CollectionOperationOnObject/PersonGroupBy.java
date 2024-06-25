@@ -35,6 +35,7 @@ public class PersonGroupBy {
 		
 		// 2.2 Group by the name + Count or Sum the Qty.
 		
+		listOfPeople.stream().map(p1-> p1.getId()+1).sorted().collect(Collectors.toList());
 		Map<Integer, List<Person>> counting = listOfPeople.stream().collect(Collectors.groupingBy(Person :: getId));
 		
 		counting.forEach((key,value)

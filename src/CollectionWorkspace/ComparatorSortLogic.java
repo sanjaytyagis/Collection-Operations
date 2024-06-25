@@ -5,6 +5,23 @@ public class ComparatorSortLogic {
 	public static void main(String[] args) {
 		
 /*
+ 
+ // Using Lambda PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>((a, b) -> b - a);
+		
+				
+		 PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>( new Comparator<Integer>() {
+		                   
+		                    public int compare(Integer a, Integer b)
+		                    {
+		                        if (a < b)
+		                            return 1;
+		                        if (a > b)
+		                            return -1;
+		                        return 0;
+		                    }
+		                });
+				 
+		
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Sort Only For Numeric Values using less code
 		    
 		    public int compareTo(Student s) {

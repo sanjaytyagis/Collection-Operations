@@ -14,7 +14,7 @@ public class OptionalExample {
         
         //isPresent() : if Optional is Non-empty
         if(StringOptional.isPresent()){
-            System.out.println(message);
+            System.out.println(StringOptional.get());
         }else{
         	System.out.println(StringOptional.orElse("Meesage Empty"));
         }

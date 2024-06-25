@@ -27,6 +27,8 @@ public class DependentFieldSorting {
 		listOfPeople.add(new Person(1, "Meera" ,200.0));
 		listOfPeople.add(new Person(4, "Bijender" ,300.0));
 		
+//https://stackoverflow.com/questions/24436871/very-confused-by-java-8-comparator-type-inference
+
 		//without Method referencing Comparator.comparing((Person b) -> b.getAuthor())
 		
 		// Reverse order Comparator.comparing((Person b) -> b.getAuthor(), Comparator.reverseOrder())
@@ -36,14 +38,20 @@ public class DependentFieldSorting {
 		// Comparator<Person> comparator2 = (Person p1,Person p2) -> p1.getName().compareTo(p2.getName());
 		
 		List<Person> result = 
-				
+				// ascending order	
 		listOfPeople.
 		stream().
 		sorted(
-		Comparator.comparing(Person :: getId).thenComparing(Comparator.comparing(Person :: getName))
-		)
-		.
-		collect(Collectors.toList());
+		Comparator.comparing(Person :: getId).
+		thenComparing(Comparator.comparing(Person :: getName))
+		).collect(Collectors.toList());
+		
+		// descending order
+		List<Person> el =  listOfPeople.stream().sorted(
+				Comparator.comparing(Person :: getId, Collections.reverseOrder()).
+				thenComparing(Person :: getName,Collections.reverseOrder())).
+				collect(Collectors.toList());
+		
 		
 		for (Person p : result) {
             System.out.println(p);
